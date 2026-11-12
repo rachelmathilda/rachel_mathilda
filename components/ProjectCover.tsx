@@ -5,6 +5,7 @@ import { useState } from "react"
 interface Props {
   title: string
   image?: string
+  position?: string
   className?: string
 }
 
@@ -23,7 +24,12 @@ function hash(text: string) {
   return Math.abs(h)
 }
 
-export default function ProjectCover({ title, image, className = "" }: Props) {
+export default function ProjectCover({
+  title,
+  image,
+  position,
+  className = "",
+}: Props) {
   const [failed, setFailed] = useState(false)
 
   if (image && !failed) {
@@ -33,7 +39,8 @@ export default function ProjectCover({ title, image, className = "" }: Props) {
         alt={title}
         loading="lazy"
         onError={() => setFailed(true)}
-        className={`h-full w-full object-cover object-top ${className}`}
+        style={{ objectPosition: position ?? "50% 0%" }}
+        className={`h-full w-full object-cover ${className}`}
       />
     )
   }

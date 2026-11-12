@@ -144,7 +144,7 @@
     {
       "id": "vaelys",
       "visible": true,
-      "featured": true,
+      "featured": false,
       "title": "Vaelys",
       "summary": {
         "en": "Fashion shopping app with outfit recommendations, virtual try-on, and real-time chat.",
@@ -171,7 +171,7 @@
     {
       "id": "grind",
       "visible": true,
-      "featured": true,
+      "featured": false,
       "title": "grind",
       "summary": {
         "en": "Coffee shop app with a custom coffee builder, Firebase, and Riverpod.",
@@ -230,7 +230,7 @@
     },
     {
       "visible": true,
-      "featured": false,
+      "featured": true,
       "year": "2026",
       "role": "Developer",
       "links": {
@@ -267,7 +267,7 @@
     },
     {
       "visible": true,
-      "featured": false,
+      "featured": true,
       "year": "2026",
       "role": "Developer",
       "links": {
