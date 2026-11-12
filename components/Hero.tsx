@@ -50,7 +50,9 @@ export default function Hero() {
             <T k="hero.cta.art" />
           </Link>
           <a
-            href="mailto:rachelmathilda10@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=rachelmathilda10@gmail.com"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full px-4 py-3 text-sm font-semibold text-muted transition hover:text-foreground"
           >
             <Mail size={16} />
@@ -76,7 +78,7 @@ export default function Hero() {
           style={{ ["--r" as string]: "7deg", transform: "rotate(7deg)" }}
         >
           <img
-            src="/2.jpeg"
+            src="/4.jpeg"
             alt="Artwork"
             className="h-44 w-full rounded-xl object-cover"
           />

@@ -87,7 +87,9 @@ export default function Home() {
                       <T k="contact.email" />
                     </p>
                     <a
-                      href="mailto:rachelmathilda10@gmail.com"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=rachelmathilda10@gmail.com"
+                      target="_blank"
+                      rel="noreferrer"
                       className="font-display text-xl font-semibold underline-offset-4 hover:underline sm:text-2xl"
                     >
                       rachelmathilda10@gmail.com
@@ -104,7 +106,9 @@ export default function Home() {
                       GitHub
                     </a>
                     <a
-                      href="mailto:rachelmathilda10@gmail.com"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=rachelmathilda10@gmail.com"
+                      target="_blank"
+                      rel="noreferrer"
                       className="btn-solid rounded-full px-5 py-2.5 text-sm font-semibold"
                     >
                       <T k="contact.send" />
