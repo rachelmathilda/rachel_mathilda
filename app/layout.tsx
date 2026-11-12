@@ -1,5 +1,5 @@
 import "./globals.css"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Space_Grotesk, Figtree } from "next/font/google"
 import { Providers } from "./providers"
 import Navbar from "@/components/Navbar"
@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   title: "Rachel Mathilda",
   description:
     "Portfolio of Rachel Mathilda. AI, software development, and visual arts.",
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#f7a8c4",
 }
 
 export default function RootLayout({

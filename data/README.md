@@ -7,6 +7,7 @@ Buka `data/projects.json`. Tambah, ubah, atau hapus objek di dalam `projects`. W
 | id | ya | Unik, tanpa spasi. Contoh: `my-app` |
 | visible | tidak | `false` untuk menyembunyikan tanpa menghapus. Default `true` |
 | status | tidak | `"ongoing"` menampilkan badge On going dan catatan di detail, kosongkan kalau sudah selesai |
+| statusNote | tidak | teks `{en,id}` untuk mengganti catatan bawaan saat status ongoing |
 | featured | tidak | `true` menampilkan badge Featured dan menaikkan ke urutan atas |
 | title | ya | Judul project |
 | summary | ya | Deskripsi singkat di kartu. Bisa teks biasa atau dua bahasa: `{ "en": "...", "id": "..." }` |

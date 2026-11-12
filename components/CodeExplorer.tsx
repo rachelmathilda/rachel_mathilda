@@ -14,6 +14,7 @@ export interface Project {
   visible?: boolean
   featured?: boolean
   status?: "ongoing" | "done"
+  statusNote?: Localized
   title: string
   summary: Localized
   description?: Localized

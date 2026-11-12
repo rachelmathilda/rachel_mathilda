@@ -5,7 +5,7 @@ import { T } from "@/lib/i18n"
 
 export default function Hero() {
   return (
-    <section className="mx-auto grid max-w-6xl items-center gap-14 px-6 pb-16 pt-14 lg:grid-cols-[1.15fr_1fr] lg:pt-24">
+    <section className="mx-auto grid max-w-6xl items-center gap-10 px-6 sm:gap-14 pb-12 pt-10 sm:pb-16 sm:pt-14 lg:grid-cols-[1.15fr_1fr] lg:pt-24">
       <div>
         <span className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-muted">
           <span className="h-2 w-2 animate-pulse rounded-full bg-accent2" />
@@ -59,7 +59,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative mx-auto h-[440px] w-full max-w-sm sm:h-[500px]">
+      <div className="relative mx-auto h-[380px] w-full max-w-sm sm:h-[500px]">
         <div
           className="card-neo float-b absolute left-0 top-2 z-10 hidden w-36 overflow-hidden rounded-2xl p-1.5 sm:block"
           style={{ ["--r" as string]: "-8deg", transform: "rotate(-8deg)" }}

@@ -39,7 +39,8 @@
             "url": "https://github.com/rachelmathilda/bankflow-api"
           }
         ]
-      }
+      },
+      "status": "ongoing"
     },
     {
       "id": "patok",
@@ -73,7 +74,8 @@
             "url": "https://github.com/rachelmathilda/patok-api"
           }
         ]
-      }
+      },
+      "status": "ongoing"
     },
     {
       "id": "sisidang",
@@ -224,6 +226,80 @@
       "imagePosition": "50% 0%",
       "gallery": [
         "/projects/neuro-friend.jpg"
+      ]
+    },
+    {
+      "visible": true,
+      "featured": false,
+      "year": "2026",
+      "role": "Developer",
+      "links": {
+        "github": "",
+        "demo": ""
+      },
+      "status": "ongoing",
+      "id": "vocaverse",
+      "title": "Vocaverse",
+      "summary": {
+        "en": "Flutter language learning app for Chinese, Japanese, and Korean.",
+        "id": "Aplikasi belajar bahasa Mandarin, Jepang, dan Korea dengan Flutter."
+      },
+      "description": {
+        "en": "A Flutter language learning app for Chinese, Japanese, and Korean. It has grammar lessons, a dictionary with kanji and radicals, daily missions with XP and quests, pets, a league ranking, and an AI conversation tutor that gives feedback and links back to the app's own grammar lessons. Dictionary data comes from Jisho, Wiktionary, CC-CEDICT, and MyMemory, and the AI runs on Firebase AI Logic (Gemini).",
+        "id": "Aplikasi belajar bahasa Mandarin, Jepang, dan Korea dengan Flutter. Punya pelajaran grammar, kamus dengan kanji dan radikal, misi harian dengan XP dan quest, pets, ranking liga, dan tutor percakapan AI yang memberi feedback serta mengarahkan ke pelajaran grammar di dalam aplikasi. Data kamus dari Jisho, Wiktionary, CC-CEDICT, dan MyMemory, AI berjalan di Firebase AI Logic (Gemini)."
+      },
+      "statusNote": {
+        "en": "Still in development. I am polishing the UI and adding features before release.",
+        "id": "Masih dalam pengembangan. UI masih dipoles dan fitur terus ditambah sebelum rilis."
+      },
+      "category": "Mobile App",
+      "tags": [
+        "Flutter",
+        "Riverpod",
+        "Gemini",
+        "Firebase AI Logic"
+      ],
+      "image": "/projects/vocaverse.jpg",
+      "imagePosition": "50% 0%",
+      "gallery": [
+        "/projects/vocaverse-screen.jpg"
+      ]
+    },
+    {
+      "visible": true,
+      "featured": false,
+      "year": "2026",
+      "role": "Developer",
+      "links": {
+        "github": "",
+        "demo": ""
+      },
+      "status": "ongoing",
+      "id": "bookbite",
+      "title": "Bookbite",
+      "summary": {
+        "en": "Reading app that turns books into chapter summaries, concept maps, and quizzes.",
+        "id": "Aplikasi baca buku yang mengubah buku jadi ringkasan bab, peta konsep, dan kuis."
+      },
+      "description": {
+        "en": "A Flutter app for reading and studying books. Upload a PDF or a scanned book and it extracts the chapters with OCR, then generates chapter summaries, concept maps, and quizzes, plus an AI chat about the book. Built with Firebase and being migrated from a local Gemma model to the Gemini API for faster, more reliable extraction.",
+        "id": "Aplikasi Flutter untuk membaca dan mempelajari buku. Upload PDF atau buku hasil scan, lalu bab diekstrak dengan OCR dan dibuatkan ringkasan bab, peta konsep, dan kuis, plus chat AI tentang buku. Dibangun dengan Firebase dan sedang dimigrasi dari model Gemma lokal ke Gemini API supaya ekstraksi lebih cepat dan stabil."
+      },
+      "statusNote": {
+        "en": "Still in development. The AI is being moved to the Gemini API and the app is not released yet.",
+        "id": "Masih dalam pengembangan. AI sedang dipindah ke Gemini API dan aplikasinya belum dirilis."
+      },
+      "category": "Mobile App",
+      "tags": [
+        "Flutter",
+        "Firebase",
+        "Gemini",
+        "OCR"
+      ],
+      "image": "/projects/bookbite.jpg",
+      "imagePosition": "50% 0%",
+      "gallery": [
+        "/projects/bookbite-screen.jpg"
       ]
     },
     {
@@ -395,7 +471,8 @@
       "links": {
         "github": "https://github.com/rachelmathilda/extension-build-checker",
         "demo": ""
-      }
+      },
+      "status": "ongoing"
     },
     {
       "id": "learn-to-be-ai-engineer",

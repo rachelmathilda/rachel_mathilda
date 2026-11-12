@@ -84,7 +84,7 @@ export default function ProjectModal({ project, onClose }: Props) {
 
           {project.status === "ongoing" && (
             <p className="mt-4 rounded-2xl border border-line bg-accent2/15 px-4 py-3 text-sm">
-              {dict["modal.ongoing"][lang]}
+              {tr(project.statusNote, lang) || dict["modal.ongoing"][lang]}
             </p>
           )}
 
