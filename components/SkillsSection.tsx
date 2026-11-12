@@ -1,14 +1,15 @@
 import { skillGroups } from "@/data/profile"
 import Reveal from "@/components/Reveal"
+import { L } from "@/lib/i18n"
 
 export default function SkillsSection() {
   return (
     <div className="grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-sm:grid-cols-1">
       {skillGroups.map((group, i) => (
-        <Reveal key={group.title} delay={(i % 3) * 80}>
+        <Reveal key={typeof group.title === "string" ? group.title : group.title.en} delay={(i % 3) * 80}>
           <div className="card-neo spot h-full rounded-3xl p-6">
             <h3 className="font-display text-base font-semibold">
-              {group.title}
+              <L v={group.title} />
             </h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {group.items.map((skill) => (

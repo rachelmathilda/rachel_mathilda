@@ -1,20 +1,24 @@
+"use client"
+
 import { ArrowUpRight, Clock } from "lucide-react"
+import { tr, useLang } from "@/lib/i18n"
+import type { Lang, Localized } from "@/lib/dict"
 
 export interface Post {
   id: string
   visible?: boolean
-  title: string
-  summary: string
+  title: Localized
+  summary: Localized
   date: string
-  readTime?: string
+  readTime?: Localized
   tags?: string[]
   url?: string
 }
 
-function formatDate(date: string) {
+function formatDate(date: string, lang: Lang) {
   const d = new Date(date)
   if (Number.isNaN(d.getTime())) return date
-  return d.toLocaleDateString("en-US", {
+  return d.toLocaleDateString(lang === "id" ? "id-ID" : "en-US", {
     year: "numeric",
     month: "short",
     day: "numeric",
@@ -23,22 +27,26 @@ function formatDate(date: string) {
 }
 
 export default function BlogCard({ post }: { post: Post }) {
+  const { lang } = useLang()
+
   const body = (
     <>
       <div className="flex items-center justify-between text-xs opacity-80">
-        <span>{formatDate(post.date)}</span>
+        <span>{formatDate(post.date, lang)}</span>
         {post.readTime && (
           <span className="flex items-center gap-1.5">
             <Clock size={12} />
-            {post.readTime}
+            {tr(post.readTime, lang)}
           </span>
         )}
       </div>
 
       <h2 className="mt-4 font-display text-xl font-semibold leading-snug">
-        {post.title}
+        {tr(post.title, lang)}
       </h2>
-      <p className="mt-2 text-sm leading-relaxed opacity-85">{post.summary}</p>
+      <p className="mt-2 text-sm leading-relaxed opacity-85">
+        {tr(post.summary, lang)}
+      </p>
 
       <div className="mt-5 flex items-end justify-between gap-4">
         <div className="flex flex-wrap gap-1.5">

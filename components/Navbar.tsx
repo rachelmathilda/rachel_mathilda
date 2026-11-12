@@ -5,12 +5,15 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { User, Code, Palette, PenLine, Menu, X } from "lucide-react"
 import ThemeToggle from "@/components/ThemeToggle"
+import LanguageToggle from "@/components/LanguageToggle"
+import { T } from "@/lib/i18n"
+import type { DictKey } from "@/lib/dict"
 
-const items = [
-  { href: "/", icon: User, label: "profile" },
-  { href: "/code", icon: Code, label: "code" },
-  { href: "/art", icon: Palette, label: "art" },
-  { href: "/blogs", icon: PenLine, label: "blogs" },
+const items: { href: string; icon: typeof User; label: DictKey }[] = [
+  { href: "/", icon: User, label: "nav.profile" },
+  { href: "/code", icon: Code, label: "nav.code" },
+  { href: "/art", icon: Palette, label: "nav.art" },
+  { href: "/blogs", icon: PenLine, label: "nav.blogs" },
 ]
 
 export default function Navbar() {
@@ -61,16 +64,20 @@ export default function Navbar() {
                 }`}
               >
                 <Icon size={15} />
-                <span>{label}</span>
+                <span>
+                  <T k={label} />
+                </span>
               </Link>
             )
           })}
-          <div className="ml-2">
+          <div className="ml-2 flex items-center gap-2">
+            <LanguageToggle />
             <ThemeToggle />
           </div>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
+          <LanguageToggle />
           <ThemeToggle />
           <button
             onClick={() => setOpen(!open)}
@@ -100,7 +107,7 @@ export default function Navbar() {
                 }`}
               >
                 <Icon size={16} />
-                {label}
+                <T k={label} />
               </Link>
             )
           })}

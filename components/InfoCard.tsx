@@ -1,5 +1,8 @@
+import { L } from "@/lib/i18n"
+import type { Localized } from "@/lib/dict"
+
 interface Props {
-  title: string
+  title: Localized
   icon?: React.ReactNode
   className?: string
   children: React.ReactNode
@@ -14,7 +17,9 @@ export default function InfoCard({ title, icon, className = "", children }: Prop
             {icon}
           </span>
         )}
-        <h2 className="font-display text-xl font-semibold">{title}</h2>
+        <h2 className="font-display text-xl font-semibold">
+          <L v={title} />
+        </h2>
       </div>
       <div className="text-sm leading-relaxed">{children}</div>
     </div>

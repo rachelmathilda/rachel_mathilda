@@ -3,51 +3,59 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #f3f5fa;
-  --foreground: #111218;
+  --background: #fff6f9;
+  --foreground: #2b2025;
   --card: #ffffff;
-  --card-fg: #111218;
-  --line: #bcc2d3;
-  --muted: #5b6070;
-  --strip: #f1f4f8;
-  --accent: #6c7bd9;
-  --accent-soft: rgba(108, 123, 217, 0.14);
-  --accent-fg: #ffffff;
-  --card-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  --card-shadow-hover: 0 16px 30px rgba(0, 0, 0, 0.2);
-  --spot: rgba(108, 123, 217, 0.16);
-  --dot: rgba(17, 18, 24, 0.1);
-  --blob-a: rgba(108, 123, 217, 0.35);
-  --blob-b: rgba(255, 183, 160, 0.35);
-  --nav-bg: rgba(255, 255, 255, 0.7);
-  --chip: rgba(17, 18, 24, 0.07);
-  --chip-line: rgba(17, 18, 24, 0.22);
-  --solid: #111218;
+  --card-fg: #2b2025;
+  --line: #f0c4d4;
+  --muted: #7d6670;
+  --strip: #ffd6e4;
+  --accent: #f7a8c4;
+  --accent-ink: #c2457a;
+  --accent-soft: rgba(247, 168, 196, 0.28);
+  --accent-fg: #3b1d2a;
+  --accent2: #a6e8c5;
+  --accent2-ink: #2a9567;
+  --accent2-fg: #123524;
+  --card-shadow: 0 6px 12px rgba(190, 90, 130, 0.2);
+  --card-shadow-hover: 0 16px 30px rgba(190, 90, 130, 0.3);
+  --spot: rgba(247, 168, 196, 0.3);
+  --dot: rgba(160, 70, 105, 0.14);
+  --blob-a: rgba(247, 168, 196, 0.55);
+  --blob-b: rgba(166, 232, 197, 0.55);
+  --nav-bg: rgba(255, 255, 255, 0.72);
+  --chip: rgba(247, 168, 196, 0.25);
+  --chip-line: rgba(194, 69, 122, 0.32);
+  --solid: #3b1d2a;
   --solid-fg: #ffffff;
 }
 
 html.dark {
-  --background: #1c1c1c;
-  --foreground: #ededed;
-  --card: #61646d;
+  --background: #1c1719;
+  --foreground: #f7ecf0;
+  --card: #5a4850;
   --card-fg: #ffffff;
-  --line: #717a91;
-  --muted: #c3c8d6;
-  --strip: #9ea7c2;
-  --accent: #9ea7c2;
-  --accent-soft: rgba(158, 167, 194, 0.2);
-  --accent-fg: #14151a;
+  --line: #8f7080;
+  --muted: #dcc4cd;
+  --strip: #f7bfd3;
+  --accent: #f7a8c4;
+  --accent-ink: #f7a8c4;
+  --accent-soft: rgba(247, 168, 196, 0.2);
+  --accent-fg: #2d1520;
+  --accent2: #a6e8c5;
+  --accent2-ink: #a6e8c5;
+  --accent2-fg: #123524;
   --card-shadow: 0 6px 0 rgba(255, 255, 255, 0.6);
   --card-shadow-hover: 0 11px 0 rgba(255, 255, 255, 0.8);
-  --spot: rgba(255, 255, 255, 0.16);
+  --spot: rgba(255, 214, 230, 0.2);
   --dot: rgba(255, 255, 255, 0.08);
-  --blob-a: rgba(158, 167, 194, 0.28);
-  --blob-b: rgba(190, 140, 170, 0.2);
-  --nav-bg: rgba(12, 12, 12, 0.65);
+  --blob-a: rgba(247, 168, 196, 0.26);
+  --blob-b: rgba(166, 232, 197, 0.2);
+  --nav-bg: rgba(22, 16, 19, 0.68);
   --chip: rgba(255, 255, 255, 0.15);
   --chip-line: rgba(255, 255, 255, 0.3);
   --solid: #ffffff;
-  --solid-fg: #14151a;
+  --solid-fg: #2d1520;
 }
 
 @theme inline {
@@ -61,6 +69,10 @@ html.dark {
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-accent-fg: var(--accent-fg);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent2: var(--accent2);
+  --color-accent2-ink: var(--accent2-ink);
+  --color-accent2-fg: var(--accent2-fg);
   --font-sans: var(--ff-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--ff-display), ui-sans-serif, system-ui, sans-serif;
 }
@@ -215,9 +227,9 @@ body::before {
 .text-shimmer {
   background: linear-gradient(
     100deg,
-    var(--foreground) 20%,
-    var(--accent) 45%,
-    var(--foreground) 70%
+    var(--accent-ink) 15%,
+    var(--accent2-ink) 50%,
+    var(--accent-ink) 85%
   );
   background-size: 220% 100%;
   -webkit-background-clip: text;
@@ -233,7 +245,7 @@ body::before {
   height: 0.9em;
   margin-left: 4px;
   vertical-align: -0.05em;
-  background: var(--accent);
+  background: var(--accent2-ink);
   animation: blink 1s steps(1) infinite;
 }
 
@@ -334,4 +346,252 @@ body::before {
 .marquee-track.reverse {
   animation-direction: reverse;
   animation-duration: 46s;
+}
+
+.theme-toggle {
+  position: relative;
+  flex-shrink: 0;
+  width: 64px;
+  height: 32px;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 9999px;
+  border: 1px solid var(--line);
+  background: #5db7ff;
+  transition: box-shadow 0.4s;
+}
+
+.theme-toggle:hover {
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.tt-sky {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.7s;
+}
+
+.tt-day {
+  background: linear-gradient(180deg, #4aa8f5 0%, #bfe6ff 100%);
+  opacity: 1;
+}
+
+.tt-night {
+  background: linear-gradient(180deg, #121634 0%, #2f3568 100%);
+  opacity: 0;
+}
+
+html.dark .tt-day {
+  opacity: 0;
+}
+
+html.dark .tt-night {
+  opacity: 1;
+}
+
+.tt-cloud {
+  position: absolute;
+  border-radius: 9999px;
+  background: #fff;
+  transition:
+    transform 0.7s cubic-bezier(0.68, -0.3, 0.27, 1.3),
+    opacity 0.5s;
+}
+
+.tt-cloud.c1 {
+  width: 20px;
+  height: 9px;
+  right: 6px;
+  bottom: 4px;
+}
+
+.tt-cloud.c2 {
+  width: 14px;
+  height: 8px;
+  right: 22px;
+  bottom: -1px;
+  opacity: 0.85;
+}
+
+.tt-cloud.c3 {
+  width: 11px;
+  height: 11px;
+  right: 14px;
+  bottom: 6px;
+  opacity: 0.95;
+}
+
+html.dark .tt-cloud {
+  transform: translateY(26px);
+  opacity: 0;
+}
+
+.tt-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: #fff;
+  opacity: 0;
+  transform: scale(0);
+  transition:
+    opacity 0.6s 0.2s,
+    transform 0.6s 0.2s;
+}
+
+.tt-star.s1 {
+  left: 9px;
+  top: 7px;
+}
+
+.tt-star.s2 {
+  left: 19px;
+  top: 19px;
+  width: 2px;
+  height: 2px;
+}
+
+.tt-star.s3 {
+  left: 24px;
+  top: 8px;
+  width: 2px;
+  height: 2px;
+}
+
+.tt-star.s4 {
+  left: 12px;
+  top: 14px;
+  width: 2px;
+  height: 2px;
+}
+
+html.dark .tt-star {
+  opacity: 1;
+  transform: scale(1);
+  animation: twinkle 2.4s ease-in-out infinite;
+}
+
+html.dark .tt-star.s2 {
+  animation-delay: 0.6s;
+}
+
+html.dark .tt-star.s3 {
+  animation-delay: 1.2s;
+}
+
+html.dark .tt-star.s4 {
+  animation-delay: 1.8s;
+}
+
+.tt-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background: #ffd84d;
+  box-shadow:
+    inset -2px -2px 0 #f5b800,
+    0 0 12px 3px rgba(255, 200, 40, 0.65);
+  transition:
+    transform 0.7s cubic-bezier(0.68, -0.3, 0.27, 1.3),
+    background 0.7s,
+    box-shadow 0.7s;
+}
+
+.theme-toggle:hover .tt-knob {
+  scale: 1.08;
+}
+
+html.dark .tt-knob {
+  transform: translateX(32px) rotate(-30deg);
+  background: #eceefa;
+  box-shadow:
+    inset -3px -2px 0 #c3c8e0,
+    0 0 10px 2px rgba(190, 200, 255, 0.35);
+}
+
+.tt-knob::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  background: repeating-conic-gradient(
+    rgba(255, 216, 77, 0.7) 0 7deg,
+    transparent 7deg 30deg
+  );
+  -webkit-mask-image: radial-gradient(circle, transparent 13px, #000 14px, #000 19px, transparent 20px);
+  mask-image: radial-gradient(circle, transparent 13px, #000 14px, #000 19px, transparent 20px);
+  animation: spin 14s linear infinite;
+  transition: opacity 0.4s;
+}
+
+html.dark .tt-knob::before {
+  opacity: 0;
+}
+
+.tt-crater {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(140, 146, 185, 0.55);
+  opacity: 0;
+  transition: opacity 0.5s 0.25s;
+}
+
+.tt-crater.k1 {
+  width: 7px;
+  height: 7px;
+  left: 4px;
+  top: 5px;
+}
+
+.tt-crater.k2 {
+  width: 4px;
+  height: 4px;
+  left: 13px;
+  top: 12px;
+}
+
+.tt-crater.k3 {
+  width: 5px;
+  height: 5px;
+  left: 6px;
+  top: 15px;
+}
+
+html.dark .tt-crater {
+  opacity: 1;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+@keyframes twinkle {
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

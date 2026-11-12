@@ -1,10 +1,12 @@
 import Reveal from "@/components/Reveal"
+import { L } from "@/lib/i18n"
+import type { Localized } from "@/lib/dict"
 
 interface Props {
-  title: string
-  subtitle: string
-  date: string
-  bullets: string[]
+  title: Localized
+  subtitle: Localized
+  date: Localized
+  bullets: Localized[]
   tags?: string[]
   index?: number
 }
@@ -19,23 +21,25 @@ export default function ExperienceCard({
 }: Props) {
   return (
     <Reveal delay={(index % 3) * 90} className="relative pl-10 sm:pl-14">
-      <span className="absolute left-[7px] top-7 h-3.5 w-3.5 rounded-full border-[3px] border-background bg-accent ring-2 ring-accent/40 sm:left-[15px]" />
+      <span className="absolute left-[7px] top-7 h-3.5 w-3.5 rounded-full border-[3px] border-background bg-accent2 ring-2 ring-accent2/50 sm:left-[15px]" />
       <div className="card-neo spot rounded-3xl p-6">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h3 className="font-display text-lg font-semibold">{title}</h3>
-            <p className="mt-0.5 text-sm opacity-85">{subtitle}</p>
+            <h3 className="font-display text-lg font-semibold"><L v={title} /></h3>
+            <p className="mt-0.5 text-sm opacity-85"><L v={subtitle} /></p>
           </div>
           <span className="chip rounded-full px-3 py-1 text-xs font-medium">
-            {date}
+            <L v={date} />
           </span>
         </div>
 
         <ul className="mt-4 space-y-1.5 text-sm leading-relaxed opacity-90">
-          {bullets.map((b) => (
-            <li key={b} className="flex gap-2.5">
+          {bullets.map((b, i) => (
+            <li key={i} className="flex gap-2.5">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-current opacity-60" />
-              <span>{b}</span>
+              <span>
+                <L v={b} />
+              </span>
             </li>
           ))}
         </ul>

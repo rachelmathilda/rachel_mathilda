@@ -12,8 +12,14 @@
       "visible": true,
       "featured": true,
       "title": "BankFlow",
-      "summary": "Full-stack banking app with a Spring Boot API and a Next.js web client.",
-      "description": "Aplikasi bergaya perbankan dengan backend REST API Spring Boot dan frontend Next.js. Database PostgreSQL (Neon), dijalankan dengan Docker, dengan tooling kualitas dan monitoring seperti SonarCloud, Prometheus, dan Grafana. Dibuat sebagai proyek portofolio software engineering.",
+      "summary": {
+        "en": "Full-stack banking app with a Spring Boot API and a Next.js web client.",
+        "id": "Aplikasi perbankan full-stack dengan API Spring Boot dan klien web Next.js."
+      },
+      "description": {
+        "en": "A banking-style app with a Spring Boot REST API backend and a Next.js frontend. It uses PostgreSQL (Neon), runs with Docker, and comes with quality and monitoring tooling such as SonarCloud, Prometheus, and Grafana. Built as a software engineering portfolio project.",
+        "id": "Aplikasi bergaya perbankan dengan backend REST API Spring Boot dan frontend Next.js. Database PostgreSQL (Neon), dijalankan dengan Docker, dengan tooling kualitas dan monitoring seperti SonarCloud, Prometheus, dan Grafana. Dibuat sebagai proyek portofolio software engineering."
+      },
       "category": "Website",
       "year": "",
       "role": "Full-stack Developer",
@@ -40,8 +46,14 @@
       "visible": true,
       "featured": true,
       "title": "Patok",
-      "summary": "Mobile marketplace for buying and selling houses and land.",
-      "description": "Marketplace mobile untuk jual beli rumah dan tanah. Aplikasi Android native dengan Kotlin, backend Go dengan router Chi, dan database PostgreSQL. Dipisah menjadi dua repo: aplikasi Android dan API.",
+      "summary": {
+        "en": "Mobile marketplace for buying and selling houses and land.",
+        "id": "Marketplace mobile untuk jual beli rumah dan tanah."
+      },
+      "description": {
+        "en": "A mobile marketplace for buying and selling houses and land. A native Android app in Kotlin, a Go backend using the Chi router, and a PostgreSQL database. Split into two repositories: the Android app and the API.",
+        "id": "Marketplace mobile untuk jual beli rumah dan tanah. Aplikasi Android native dengan Kotlin, backend Go dengan router Chi, dan database PostgreSQL. Dipisah menjadi dua repo: aplikasi Android dan API."
+      },
       "category": "Mobile App",
       "year": "",
       "role": "Full-stack Developer",
@@ -64,12 +76,82 @@
       }
     },
     {
+      "id": "sisidang",
+      "visible": true,
+      "featured": true,
+      "title": "SISIDANG",
+      "summary": {
+        "en": "Thesis defense scheduling information system for Fasilkom UI.",
+        "id": "Sistem informasi penjadwalan sidang Fasilkom UI."
+      },
+      "description": {
+        "en": "The thesis defense scheduling information system of Fasilkom UI, built as a PPL course project (Software Engineering, Partnership) in the 2025/2026 even semester. New features include bulk import of defense schedules from Excel files, markdown support in lecturer notes, lecturer honorarium configuration by role and defense type, Google Calendar integration with email notifications, and workflow support for the Master of Information Technology program. On the Django REST Framework backend, the refactor focused on query optimization (N+1 fixes with Jaeger tracing), a layered architecture with the repository pattern, dead code removal, higher test coverage, quality gates, and a more secure CI/CD pipeline with Bandit SAST and QA reports on GitLab Pages.",
+        "id": "Sistem Informasi Penjadwalan Sidang Fasilkom UI, dikerjakan sebagai proyek mata kuliah PPL (Software Engineering, Partnership) Genap 2025/2026. Fitur baru mencakup bulk import jadwal sidang lewat file Excel, dukungan markdown pada catatan dosen, konfigurasi honor dosen berdasarkan peran dan jenis sidang, integrasi Google Calendar dengan notifikasi email, serta dukungan workflow sidang program Magister Teknologi Informasi. Dari sisi backend Django REST Framework, fokus refactor meliputi optimasi query (perbaikan N+1 dengan Jaeger tracing), arsitektur berlapis dengan repository pattern, pembersihan kode mati, peningkatan cakupan pengujian, quality gate, serta keamanan CI/CD pipeline dengan Bandit SAST dan laporan QA ke GitLab Pages."
+      },
+      "category": "Website",
+      "year": "2026",
+      "role": "Backend Developer",
+      "tags": [
+        "Django REST Framework",
+        "Python",
+        "CI/CD",
+        "Bandit"
+      ],
+      "image": "/projects/sisidang.png",
+      "gallery": [
+        "/projects/sisidang.png",
+        "/projects/sisidang-ui.png"
+      ],
+      "links": {
+        "github": "",
+        "demo": ""
+      }
+    },
+    {
+      "id": "punguan-sitohang",
+      "visible": true,
+      "featured": true,
+      "title": "Punguan Sitohang",
+      "summary": {
+        "en": "Clan community app for genealogy, events, and membership dues.",
+        "id": "Aplikasi komunitas marga untuk silsilah, acara, dan iuran keanggotaan."
+      },
+      "description": {
+        "en": "Punguan Sitohang is a mobile application I built for a clan community, enabling members across different cities to stay connected through family genealogy data. The app allows members to join local Punguan groups, follow events and record attendance, pay membership dues, and explore their family tree, all in one application. Built with Flutter and Firebase, it is designed to be accessible and easy to use for members of all ages while keeping large-scale family data organized, structured, and easy to manage. It includes role-based access, a social feed, and a Firestore setup hardened with security rules and App Check.",
+        "id": "Punguan Sitohang adalah aplikasi mobile yang saya bangun untuk komunitas marga, memungkinkan anggota di berbagai kota tetap terhubung lewat data silsilah keluarga. Aplikasi ini memungkinkan anggota bergabung dengan grup Punguan lokal, mengikuti acara dan mencatat kehadiran, membayar iuran keanggotaan, serta menelusuri pohon keluarga, semuanya dalam satu aplikasi. Dibangun dengan Flutter dan Firebase, aplikasi ini dirancang agar mudah diakses dan digunakan anggota dari segala usia, sambil menjaga data keluarga berskala besar tetap rapi, terstruktur, dan mudah dikelola. Dilengkapi akses berbasis peran, feed sosial, serta Firestore yang diamankan dengan security rules dan App Check."
+      },
+      "category": "Mobile App",
+      "year": "2026",
+      "role": "Full Stack Developer",
+      "tags": [
+        "Flutter",
+        "Firebase",
+        "Family Tree",
+        "Role-based Access"
+      ],
+      "image": "/projects/punguan-sitohang.png",
+      "imagePosition": "50% 34%",
+      "gallery": [
+        "/projects/punguan-sitohang.png"
+      ],
+      "links": {
+        "github": "",
+        "demo": ""
+      }
+    },
+    {
       "id": "vaelys",
       "visible": true,
       "featured": true,
       "title": "Vaelys",
-      "summary": "Fashion shopping app with outfit recommendations, virtual try-on, and real-time chat.",
-      "description": "Aplikasi belanja fashion berbasis Flutter dengan rekomendasi outfit, virtual try-on, dukungan banyak metode pembayaran, dan chat real-time, dengan desain bernuansa ungu yang bersih. Mencakup katalog dan filter, detail produk, keranjang, pesanan, pengiriman dengan peta, diskon, riwayat transaksi, serta pengaturan profil dan bahasa.",
+      "summary": {
+        "en": "Fashion shopping app with outfit recommendations, virtual try-on, and real-time chat.",
+        "id": "Aplikasi belanja fashion dengan rekomendasi outfit, virtual try-on, dan chat real-time."
+      },
+      "description": {
+        "en": "A fashion shopping app built with Flutter featuring outfit recommendations, virtual try-on, multi-payment support, and real-time chat, wrapped in a clean purple aesthetic. It covers a catalog with filters, product details, cart, orders, delivery with a map, discounts, transaction history, and profile and language settings.",
+        "id": "Aplikasi belanja fashion berbasis Flutter dengan rekomendasi outfit, virtual try-on, dukungan banyak metode pembayaran, dan chat real-time, dengan desain bernuansa ungu yang bersih. Mencakup katalog dan filter, detail produk, keranjang, pesanan, pengiriman dengan peta, diskon, riwayat transaksi, serta pengaturan profil dan bahasa."
+      },
       "category": "Mobile App",
       "year": "",
       "role": "Flutter Developer",
@@ -89,8 +171,14 @@
       "visible": true,
       "featured": true,
       "title": "grind",
-      "summary": "Coffee shop app with a custom coffee builder, Firebase, and Riverpod.",
-      "description": "Aplikasi coffee shop Flutter dengan Firebase Auth, Firestore, state management Riverpod, navigasi GoRouter, dan wizard pembuat kopi custom (tipe, ukuran cup, gula, jenis kopi, rasa, topping). Dilengkapi katalog, keranjang, pengiriman dengan peta, pembayaran, OTP, dan pengaturan profil serta bahasa.",
+      "summary": {
+        "en": "Coffee shop app with a custom coffee builder, Firebase, and Riverpod.",
+        "id": "Aplikasi coffee shop dengan pembuat kopi custom, Firebase, dan Riverpod."
+      },
+      "description": {
+        "en": "A Flutter coffee shop app with Firebase Auth, Firestore, Riverpod state management, GoRouter navigation, and a custom coffee wizard (type, cup size, sugar, coffee type, flavor, toppings). It also has a catalog, cart, delivery with a map, payment, OTP, and profile and language settings.",
+        "id": "Aplikasi coffee shop Flutter dengan Firebase Auth, Firestore, state management Riverpod, navigasi GoRouter, dan wizard pembuat kopi custom (tipe, ukuran cup, gula, jenis kopi, rasa, topping). Dilengkapi katalog, keranjang, pengiriman dengan peta, pembayaran, OTP, dan pengaturan profil serta bahasa."
+      },
       "category": "Mobile App",
       "year": "",
       "role": "Flutter Developer",
@@ -111,8 +199,14 @@
       "visible": true,
       "featured": false,
       "title": "Neuro Friend",
-      "summary": "Voice-first AI companion for people with ADHD and Autism.",
-      "description": "Teman AI berbasis suara untuk penyandang ADHD dan Autisme, ditenagai Gemma 4 lewat Google AI API. Pengguna cukup menceritakan harinya dan mendapat jadwal terstruktur, tanpa perlu mengetik dan tanpa penghakiman.",
+      "summary": {
+        "en": "Voice-first AI companion for people with ADHD and Autism.",
+        "id": "Teman AI berbasis suara untuk penyandang ADHD dan Autisme."
+      },
+      "description": {
+        "en": "A voice-first AI companion for people with ADHD and Autism, powered by Gemma 4 through the Google AI API. Users simply speak about their day and get a structured schedule, with no typing needed and no judgment given. The design covers a brain dump that turns scattered thoughts into tasks, a to-do list with urgent and delayed filters, mood tracking, a Deep Focus Mode with reminders, app usage monitoring, and recap screens for the scheduler, focus check-ins, social scripts, and sensory triggers.",
+        "id": "Teman AI berbasis suara untuk penyandang ADHD dan Autisme, ditenagai Gemma 4 lewat Google AI API. Pengguna cukup menceritakan harinya dan mendapat jadwal terstruktur, tanpa perlu mengetik dan tanpa penghakiman. Desainnya mencakup brain dump yang mengubah pikiran berserakan menjadi tugas, daftar to-do dengan filter urgent dan delayed, pelacak suasana hati, Deep Focus Mode dengan pengingat, pemantauan penggunaan aplikasi, serta layar rekap untuk penjadwal, check-in fokus, skrip sosial, dan pemicu sensorik."
+      },
       "category": "Mobile App",
       "year": "",
       "role": "Developer",
@@ -122,19 +216,29 @@
         "Google AI API",
         "Voice"
       ],
-      "image": "",
+      "image": "/projects/neuro-friend.jpg",
       "links": {
         "github": "https://github.com/rachelmathilda/neuro_friend",
         "demo": ""
-      }
+      },
+      "imagePosition": "50% 0%",
+      "gallery": [
+        "/projects/neuro-friend.jpg"
+      ]
     },
     {
       "id": "mastering-data-science",
       "visible": true,
       "featured": false,
       "title": "Mastering Data Science",
-      "summary": "Free data science course app with a built-in compiler and notebook.",
-      "description": "Aplikasi kursus data science gratis dengan banyak materi lengkap, compiler dan notebook bawaan, serta sertifikat otomatis. Dibangun dengan Flutter dan membaca konten langsung dari repo GitHub, sehingga materi tidak ikut di dalam APK. Repo ini berisi konten kursusnya.",
+      "summary": {
+        "en": "Free data science course app with a built-in compiler and notebook.",
+        "id": "Aplikasi kursus data science gratis dengan compiler dan notebook bawaan."
+      },
+      "description": {
+        "en": "A free data science course app with extensive material, a built-in compiler and notebook, and automatically generated certificates. Built with Flutter and reading its content directly from a GitHub repository, so the material is not bundled in the APK. This repository holds the course content.",
+        "id": "Aplikasi kursus data science gratis dengan banyak materi lengkap, compiler dan notebook bawaan, serta sertifikat otomatis. Dibangun dengan Flutter dan membaca konten langsung dari repo GitHub, sehingga materi tidak ikut di dalam APK. Repo ini berisi konten kursusnya."
+      },
       "category": "Mobile App",
       "year": "",
       "role": "Developer",
@@ -154,8 +258,14 @@
       "visible": true,
       "featured": false,
       "title": "Morphara",
-      "summary": "Furniture e-commerce web app with an interactive 3D customizer.",
-      "description": "Aplikasi e-commerce furnitur modern dengan Next.js. Punya customizer furnitur 3D interaktif, katalog dengan filter, dan alur belanja lengkap dari keranjang sampai checkout.",
+      "summary": {
+        "en": "Furniture e-commerce web app with an interactive 3D customizer.",
+        "id": "Aplikasi web e-commerce furnitur dengan customizer 3D interaktif."
+      },
+      "description": {
+        "en": "A modern furniture e-commerce web app built with Next.js. It features an interactive 3D furniture customizer, a catalog with filters, and a full shopping flow from cart to checkout.",
+        "id": "Aplikasi e-commerce furnitur modern dengan Next.js. Punya customizer furnitur 3D interaktif, katalog dengan filter, dan alur belanja lengkap dari keranjang sampai checkout."
+      },
       "category": "Website",
       "year": "",
       "role": "Developer",
@@ -164,19 +274,26 @@
         "TypeScript",
         "3D"
       ],
-      "image": "",
+      "image": "/projects/morphara.jpg",
       "links": {
         "github": "https://github.com/rachelmathilda/furniture_shop_next_js_website",
         "demo": ""
-      }
+      },
+      "imagePosition": "50% 0%"
     },
     {
       "id": "climate-disaster-forecasting",
       "visible": true,
       "featured": false,
       "title": "Climate and Disaster Forecasting",
-      "summary": "Real-time weather monitoring and disaster prediction website.",
-      "description": "Website pemantauan cuaca real-time dan prediksi bencana (banjir, badai, gelombang panas, dan lainnya), plus pembelajaran iklim interaktif. Memakai data Open-Meteo dan peta MapTiler.",
+      "summary": {
+        "en": "Real-time weather monitoring and disaster prediction website.",
+        "id": "Website pemantauan cuaca real-time dan prediksi bencana."
+      },
+      "description": {
+        "en": "A website for real-time weather monitoring, disaster prediction (flood, hurricane, heatwave, and more), and interactive climate learning. Powered by Open-Meteo data and MapTiler maps.",
+        "id": "Website pemantauan cuaca real-time dan prediksi bencana (banjir, badai, gelombang panas, dan lainnya), plus pembelajaran iklim interaktif. Memakai data Open-Meteo dan peta MapTiler."
+      },
       "category": "Website",
       "year": "",
       "role": "Developer",
@@ -186,40 +303,27 @@
         "Open-Meteo",
         "MapTiler"
       ],
-      "image": "",
+      "image": "/projects/biosfera.jpg",
       "links": {
         "github": "https://github.com/rachelmathilda/climate_and_disaster_forecasting_website",
         "demo": ""
-      }
-    },
-    {
-      "id": "ecommerce-fraud-detection",
-      "visible": true,
-      "featured": false,
-      "title": "E-commerce Fraud Detection",
-      "summary": "Anomaly-based fraud detection for e-commerce listings.",
-      "description": "Deteksi penipuan berbasis anomali untuk listing e-commerce menggunakan Isolation Forest, dengan backend FastAPI dan dashboard Next.js.",
-      "category": "AI & ML",
-      "year": "",
-      "role": "AI Engineer",
-      "tags": [
-        "Isolation Forest",
-        "FastAPI",
-        "Next.js"
-      ],
-      "image": "",
-      "links": {
-        "github": "https://github.com/rachelmathilda/e-commerce-fraud-detection",
-        "demo": ""
-      }
+      },
+      "imagePosition": "50% 0%",
+      "status": "ongoing"
     },
     {
       "id": "waste-type-classification",
       "visible": true,
       "featured": false,
       "title": "Waste Type Classification",
-      "summary": "Real-time waste classification with a two-stage YOLO model.",
-      "description": "Klasifikasi jenis sampah secara real-time dengan dua tahap YOLO. Tahap pertama mendeteksi sampah daur ulang atau organik, tahap kedua mengidentifikasi materialnya. Frontend Next.js dan backend FastAPI.",
+      "summary": {
+        "en": "Real-time waste classification with a two-stage YOLO model.",
+        "id": "Klasifikasi sampah real-time dengan model YOLO dua tahap."
+      },
+      "description": {
+        "en": "Real-time waste type classification using a two-stage YOLO model. Stage 1 detects recyclable versus organic, and stage 2 identifies the specific material. The frontend is built with Next.js and the backend is served with FastAPI.",
+        "id": "Klasifikasi jenis sampah secara real-time dengan dua tahap YOLO. Tahap pertama mendeteksi sampah daur ulang atau organik, tahap kedua mengidentifikasi materialnya. Frontend Next.js dan backend FastAPI."
+      },
       "category": "AI & ML",
       "year": "",
       "role": "AI Engineer",
@@ -229,41 +333,27 @@
         "FastAPI",
         "Next.js"
       ],
-      "image": "",
+      "image": "/projects/waste-classifier.jpg",
       "links": {
         "github": "https://github.com/rachelmathilda/waste-type-classification",
         "demo": ""
-      }
-    },
-    {
-      "id": "self-driving-car-simulation",
-      "visible": true,
-      "featured": false,
-      "title": "Self Driving Car Simulation",
-      "summary": "AI simulation for autonomous driving experiments and prediction visualization.",
-      "description": "Proyek simulasi AI untuk eksperimen mengemudi otonom dan visualisasi prediksi. Backend FastAPI dengan NumPy, OpenCV, dan Gymnasium, frontend Next.js.",
-      "category": "AI & ML",
-      "year": "",
-      "role": "AI Engineer",
-      "tags": [
-        "FastAPI",
-        "Next.js",
-        "OpenCV",
-        "Gymnasium"
-      ],
-      "image": "",
-      "links": {
-        "github": "https://github.com/rachelmathilda/self-driving-car-simulation",
-        "demo": "https://self-driving-car-simulation-mocha.vercel.app"
-      }
+      },
+      "imagePosition": "50% 30%",
+      "status": "ongoing"
     },
     {
       "id": "protein-folding-rl",
       "visible": true,
       "featured": false,
       "title": "Protein Folding RL",
-      "summary": "Reinforcement learning for protein folding simulation and analysis.",
-      "description": "Proyek reinforcement learning untuk simulasi dan analisis pelipatan protein. Menggunakan PyTorch dan Gymnasium dengan backend FastAPI dan frontend Next.js.",
+      "summary": {
+        "en": "Reinforcement learning for protein folding simulation and analysis.",
+        "id": "Reinforcement learning untuk simulasi dan analisis pelipatan protein."
+      },
+      "description": {
+        "en": "A reinforcement learning project for protein folding simulation and analysis. It uses PyTorch and Gymnasium with a FastAPI backend and a Next.js frontend.",
+        "id": "Proyek reinforcement learning untuk simulasi dan analisis pelipatan protein. Menggunakan PyTorch dan Gymnasium dengan backend FastAPI dan frontend Next.js."
+      },
       "category": "Bioinformatics Tools",
       "year": "",
       "role": "AI Engineer",
@@ -273,19 +363,27 @@
         "FastAPI",
         "Next.js"
       ],
-      "image": "",
+      "image": "/projects/hp-fold.jpg",
       "links": {
         "github": "https://github.com/rachelmathilda/simple-rl-for-protein-folding",
         "demo": "https://simple-rl-for-protein-folding.vercel.app"
-      }
+      },
+      "imagePosition": "15% 0%",
+      "status": "ongoing"
     },
     {
       "id": "build-checker",
       "visible": true,
       "featured": false,
       "title": "Build Checker",
-      "summary": "VS Code extension to run and diagnose builds in one click.",
-      "description": "Ekstensi VS Code untuk mengecek build proyek Flutter, Android (Gradle), dan web (npm atau yarn). Mendeteksi tipe proyek otomatis, menjalankan build dari status bar, menampilkan error dan warning di panel Problems, serta menyimpan riwayat build di sidebar.",
+      "summary": {
+        "en": "VS Code extension to run and diagnose builds in one click.",
+        "id": "Ekstensi VS Code untuk menjalankan dan mendiagnosis build dengan sekali klik."
+      },
+      "description": {
+        "en": "A VS Code extension that checks builds for Flutter, Android (Gradle), and web (npm or yarn) projects. It detects the project type automatically, runs builds from the status bar, shows errors and warnings in the Problems panel, and keeps a build history in the sidebar.",
+        "id": "Ekstensi VS Code untuk mengecek build proyek Flutter, Android (Gradle), dan web (npm atau yarn). Mendeteksi tipe proyek otomatis, menjalankan build dari status bar, menampilkan error dan warning di panel Problems, serta menyimpan riwayat build di sidebar."
+      },
       "category": "Software",
       "year": "",
       "role": "Developer",
@@ -304,8 +402,14 @@
       "visible": true,
       "featured": false,
       "title": "Learn to Be AI Engineer",
-      "summary": "Notebooks documenting my AI engineering learning journey.",
-      "description": "Dokumentasi perjalanan belajar AI engineering dalam bentuk notebook: sistem RAG, fine-tuning, agentic systems, dan topik lainnya.",
+      "summary": {
+        "en": "Notebooks documenting my AI engineering learning journey.",
+        "id": "Notebook dokumentasi perjalanan belajar AI engineering."
+      },
+      "description": {
+        "en": "Notebooks documenting my AI engineering learning journey: RAG systems, fine-tuning, agentic systems, and more.",
+        "id": "Dokumentasi perjalanan belajar AI engineering dalam bentuk notebook: sistem RAG, fine-tuning, agentic systems, dan topik lainnya."
+      },
       "category": "AI & ML",
       "year": "",
       "role": "Learner",
@@ -326,8 +430,14 @@
       "visible": false,
       "featured": false,
       "title": "Judul Project",
-      "summary": "Deskripsi singkat di kartu.",
-      "description": "Penjelasan panjang yang muncul di popup detail.",
+      "summary": {
+        "en": "Short summary shown on the card.",
+        "id": "Ringkasan singkat yang muncul di kartu."
+      },
+      "description": {
+        "en": "Longer explanation shown in the detail popup.",
+        "id": "Penjelasan panjang yang muncul di popup detail."
+      },
       "category": "Website",
       "year": "2026",
       "role": "Developer",
@@ -344,7 +454,9 @@
             "url": ""
           }
         ]
-      }
+      },
+      "gallery": [],
+      "imagePosition": "50% 0%"
     }
   ]
 }

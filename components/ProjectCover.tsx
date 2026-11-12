@@ -9,12 +9,12 @@ interface Props {
 }
 
 const palettes = [
-  ["#6c7bd9", "#c3a6ff"],
-  ["#4f8f9e", "#9ee0c8"],
-  ["#d9826c", "#ffc4a3"],
-  ["#8a6cd9", "#e0a6ff"],
-  ["#5a7bb5", "#a6d0ff"],
-  ["#b56c8a", "#ffa6c8"],
+  ["#f7a8c4", "#ffd9e6"],
+  ["#8fdcb4", "#d6f6e4"],
+  ["#f9b3cc", "#b9edd1"],
+  ["#b9edd1", "#ffd1e1"],
+  ["#ffc2d6", "#c9f2dc"],
+  ["#9fe3c0", "#f8c0d6"],
 ]
 
 function hash(text: string) {
@@ -33,7 +33,7 @@ export default function ProjectCover({ title, image, className = "" }: Props) {
         alt={title}
         loading="lazy"
         onError={() => setFailed(true)}
-        className={`h-full w-full object-cover ${className}`}
+        className={`h-full w-full object-cover object-top ${className}`}
       />
     )
   }
@@ -50,10 +50,10 @@ export default function ProjectCover({ title, image, className = "" }: Props) {
         style={{ background: "#fff" }}
       />
       <span
-        className="absolute -bottom-12 -left-8 h-44 w-44 rounded-full opacity-20"
-        style={{ background: "#000" }}
+        className="absolute -bottom-12 -left-8 h-44 w-44 rounded-full opacity-25"
+        style={{ background: "#fff" }}
       />
-      <span className="relative font-display text-6xl font-bold text-white/90 drop-shadow">
+      <span className="relative font-display text-6xl font-bold text-[#3b1d2a]/70">
         {title.trim().charAt(0).toUpperCase() || "?"}
       </span>
     </div>

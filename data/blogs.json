@@ -3,10 +3,13 @@
     {
       "id": "template-salin-saya",
       "visible": false,
-      "title": "Judul Tulisan",
-      "summary": "Ringkasan singkat tulisan yang muncul di kartu.",
+      "title": { "en": "Post title", "id": "Judul tulisan" },
+      "summary": {
+        "en": "Short summary shown on the card.",
+        "id": "Ringkasan singkat yang muncul di kartu."
+      },
       "date": "2026-11-12",
-      "readTime": "5 min read",
+      "readTime": { "en": "5 min read", "id": "5 menit baca" },
       "tags": ["AI", "Flutter"],
       "url": ""
     }

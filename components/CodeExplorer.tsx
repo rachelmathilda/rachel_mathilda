@@ -1,24 +1,29 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { ArrowUpRight, Search, Star } from "lucide-react"
+import { ArrowUpRight, Search, Star, Wrench } from "lucide-react"
 import data from "@/data/projects.json"
 import ProjectCover from "@/components/ProjectCover"
 import ProjectModal from "@/components/ProjectModal"
 import Reveal from "@/components/Reveal"
+import { dict, type DictKey, type Localized } from "@/lib/dict"
+import { tr, useLang } from "@/lib/i18n"
 
 export interface Project {
   id: string
   visible?: boolean
   featured?: boolean
+  status?: "ongoing" | "done"
   title: string
-  summary: string
-  description?: string
+  summary: Localized
+  description?: Localized
   category: string
   year?: string
   role?: string
   tags: string[]
   image?: string
+  imagePosition?: string
+  gallery?: string[]
   links?: {
     github?: string
     demo?: string
@@ -27,11 +32,18 @@ export interface Project {
 }
 
 const categories = ["All", ...(data.categories as string[])]
-const allProjects = (data.projects as Project[]).filter(
+
+function catLabel(name: string, lang: "en" | "id") {
+  if (name === "All") return dict["code.all"][lang]
+  const key = `cat.${name}` as DictKey
+  return dict[key]?.[lang] ?? name
+}
+const allProjects = (data.projects as unknown as Project[]).filter(
   (p) => p.visible !== false
 )
 
 export default function CodeExplorer() {
+  const { lang } = useLang()
   const [active, setActive] = useState("All")
   const [query, setQuery] = useState("")
   const [selected, setSelected] = useState<Project | null>(null)
@@ -50,11 +62,11 @@ export default function CodeExplorer() {
         (p) =>
           !q ||
           p.title.toLowerCase().includes(q) ||
-          p.summary.toLowerCase().includes(q) ||
+          tr(p.summary, lang).toLowerCase().includes(q) ||
           p.tags.some((t) => t.toLowerCase().includes(q))
       )
       .sort((a, b) => Number(!!b.featured) - Number(!!a.featured))
-  }, [active, query])
+  }, [active, query, lang])
 
   return (
     <>
@@ -67,7 +79,7 @@ export default function CodeExplorer() {
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search projects or tech..."
+            placeholder={dict["code.search"][lang]}
             className="w-full rounded-full border border-line bg-transparent py-3 pl-12 pr-5 text-sm outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/30"
           />
         </div>
@@ -84,7 +96,7 @@ export default function CodeExplorer() {
                     : "border-line hover:bg-accent-soft"
                 }`}
               >
-                {c}
+                {catLabel(c, lang)}
                 <span
                   className={`rounded-full px-1.5 text-[11px] ${
                     active === c ? "bg-black/20" : "bg-accent-soft"
@@ -101,10 +113,10 @@ export default function CodeExplorer() {
       {shown.length === 0 ? (
         <div className="mt-20 text-center text-muted">
           <p className="font-display text-xl font-semibold text-foreground">
-            Nothing here yet
+            {dict["code.empty.title"][lang]}
           </p>
           <p className="mt-2 text-sm">
-            No project matches this filter. Add one in data/projects.json.
+            {dict["code.empty.desc"][lang]}
           </p>
         </div>
       ) : (
@@ -113,16 +125,30 @@ export default function CodeExplorer() {
             <Reveal key={p.id} delay={(i % 3) * 80}>
               <button
                 onClick={() => setSelected(p)}
-                className="card-neo spot group block h-full w-full overflow-hidden rounded-3xl text-left"
+                className="card-neo spot group flex h-full w-full flex-col items-stretch justify-start overflow-hidden rounded-3xl text-left"
               >
                 <div className="relative aspect-[16/9] w-full overflow-hidden">
                   <div className="h-full w-full transition-transform duration-700 group-hover:scale-110">
-                    <ProjectCover title={p.title} image={p.image} />
+                    <ProjectCover
+                      title={p.title}
+                      image={p.image}
+                      position={p.imagePosition}
+                    />
                   </div>
                   {p.featured && (
                     <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur">
                       <Star size={11} className="fill-current" />
-                      Featured
+                      {dict["code.featured"][lang]}
+                    </span>
+                  )}
+                  {p.status === "ongoing" && (
+                    <span
+                      className={`absolute left-3 flex items-center gap-1 rounded-full bg-accent2 px-2.5 py-1 text-[11px] font-semibold text-accent2-fg ${
+                        p.featured ? "top-11" : "top-3"
+                      }`}
+                    >
+                      <Wrench size={11} />
+                      {dict["code.ongoing"][lang]}
                     </span>
                   )}
                   <span className="absolute right-3 top-3 grid h-8 w-8 translate-y-1 place-items-center rounded-full bg-white text-[#14151a] opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">
@@ -132,13 +158,15 @@ export default function CodeExplorer() {
 
                 <div className="p-5">
                   <div className="flex items-center justify-between text-[11px] uppercase tracking-wider opacity-75">
-                    <span>{p.category}</span>
+                    <span>{catLabel(p.category, lang)}</span>
                     <span>{p.year}</span>
                   </div>
                   <h3 className="mt-2 font-display text-lg font-semibold">
                     {p.title}
                   </h3>
-                  <p className="mt-1 text-sm opacity-85">{p.summary}</p>
+                  <p className="mt-1 text-sm opacity-85">
+                    {tr(p.summary, lang)}
+                  </p>
 
                   {p.tags.length > 0 && (
                     <div className="mt-4 flex flex-wrap gap-1.5">

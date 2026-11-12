@@ -6,6 +6,8 @@ import ToolsStrip from "@/components/ToolsStrip"
 import SkillsSection from "@/components/SkillsSection"
 import SectionTitle from "@/components/SectionTitle"
 import Reveal from "@/components/Reveal"
+import { T } from "@/lib/i18n"
+import { dict } from "@/lib/dict"
 import { experiences } from "@/data/profile"
 
 export default function Home() {
@@ -16,53 +18,57 @@ export default function Home() {
 
       <main className="mx-auto max-w-6xl space-y-24 px-6 pt-24">
         <section>
-          <SectionTitle index="01" title="About me" />
+          <SectionTitle index="01" title={dict["sec.about"]} />
           <div className="grid grid-cols-4 gap-6 max-lg:grid-cols-2 max-sm:grid-cols-1">
             <Reveal className="col-span-2 max-sm:col-span-1">
               <InfoCard
-                title="About"
+                title={dict["card.about"]}
                 icon={<Sparkles size={18} />}
                 className="h-full"
               >
                 <p>
-                  Computer Science undergraduate student at the University of
-                  Indonesia. Highly interested in Artificial Intelligence and
-                  Software Development. Experienced and capable of working in
-                  a team through competitions and study groups.
+                  <T k="about.p1" />
                 </p>
                 <p className="mt-3">
-                  In the meantime, I enjoy doing visual arts (watercolor and
-                  digital).
+                  <T k="about.p2" />
                 </p>
               </InfoCard>
             </Reveal>
 
             <Reveal delay={90}>
               <InfoCard
-                title="Education"
+                title={dict["card.education"]}
                 icon={<GraduationCap size={18} />}
                 className="h-full"
               >
-                <p className="font-medium">University Of Indonesia</p>
-                <p>Bachelor of Computer Science</p>
+                <p className="font-medium">
+                  <T k="edu.univ" />
+                </p>
+                <p>
+                  <T k="edu.degree" />
+                </p>
                 <p className="mt-2 opacity-80">2022 - 2027</p>
               </InfoCard>
             </Reveal>
 
             <Reveal delay={180}>
               <InfoCard
-                title="Languages"
+                title={dict["card.languages"]}
                 icon={<Languages size={18} />}
                 className="h-full"
               >
                 <div className="flex items-center justify-between">
-                  <span>Bahasa Indonesia</span>
+                  <span>
+                    <T k="lang.name.id" />
+                  </span>
                   <span className="chip rounded-full px-2.5 py-0.5 text-xs">
-                    Native
+                    <T k="lang.native" />
                   </span>
                 </div>
                 <div className="mt-2 flex items-center justify-between">
-                  <span>English</span>
+                  <span>
+                    <T k="lang.name.en" />
+                  </span>
                   <span className="chip rounded-full px-2.5 py-0.5 text-xs">
                     EPT 500
                   </span>
@@ -74,10 +80,12 @@ export default function Home() {
               delay={120}
               className="col-span-4 max-lg:col-span-2 max-sm:col-span-1"
             >
-              <InfoCard title="Contact" icon={<Mail size={18} />}>
+              <InfoCard title={dict["card.contact"]} icon={<Mail size={18} />}>
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div>
-                    <p className="opacity-80">email</p>
+                    <p className="opacity-80">
+                      <T k="contact.email" />
+                    </p>
                     <a
                       href="mailto:rachelmathilda10@gmail.com"
                       className="font-display text-xl font-semibold underline-offset-4 hover:underline sm:text-2xl"
@@ -99,7 +107,7 @@ export default function Home() {
                       href="mailto:rachelmathilda10@gmail.com"
                       className="btn-solid rounded-full px-5 py-2.5 text-sm font-semibold"
                     >
-                      Send an email
+                      <T k="contact.send" />
                     </a>
                   </div>
                 </div>
@@ -109,16 +117,24 @@ export default function Home() {
         </section>
 
         <section>
-          <SectionTitle index="02" title="Skills" />
+          <SectionTitle index="02" title={dict["sec.skills"]} />
           <SkillsSection />
         </section>
 
         <section>
-          <SectionTitle index="03" title="Experience" />
+          <SectionTitle index="03" title={dict["sec.experience"]} />
           <div className="relative space-y-6">
             <span className="absolute bottom-6 left-[13px] top-6 w-px bg-line sm:left-[21px]" />
             {experiences.map((exp, i) => (
-              <ExperienceCard key={exp.title + exp.date} index={i} {...exp} />
+              <ExperienceCard
+                key={i}
+                index={i}
+                title={exp.title}
+                subtitle={exp.subtitle}
+                date={exp.date}
+                bullets={exp.bullets}
+                tags={exp.tags}
+              />
             ))}
           </div>
         </section>
