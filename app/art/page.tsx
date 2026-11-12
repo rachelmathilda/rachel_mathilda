@@ -1,47 +1,24 @@
-"use client"
-
-import { useState } from "react"
+import ArtGallery from "@/components/ArtGallery"
+import Reveal from "@/components/Reveal"
 
 export default function ArtPage() {
   const images = Array.from({ length: 8 }, (_, i) => `/${i + 1}.jpeg`)
-  const [activeImg, setActiveImg] = useState<string | null>(null)
 
   return (
-    <main className="min-h-screen px-12 pt-24 pb-24">
-      <div className="grid grid-cols-4 gap-6 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
-        {images.map((src, i) => (
-          <ArtCard key={i} src={src} onClick={() => setActiveImg(src)} />
-        ))}
-      </div>
+    <main className="mx-auto max-w-6xl px-6 pb-10 pt-16">
+      <Reveal className="mb-12 text-center">
+        <p className="font-display text-sm tracking-widest text-accent">
+          GALLERY
+        </p>
+        <h1 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-6xl">
+          Watercolor &amp; digital art
+        </h1>
+        <p className="mx-auto mt-4 max-w-xl text-muted">
+          Tap any piece to view it large. Use the arrow keys to browse.
+        </p>
+      </Reveal>
 
-      {/* Fullscreen Modal */}
-      {activeImg && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
-          onClick={() => setActiveImg(null)}
-        >
-          <img
-            src={activeImg}
-            alt="art"
-            className="max-h-[90vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
-          />
-        </div>
-      )}
+      <ArtGallery images={images} />
     </main>
-  )
-}
-
-function ArtCard({ src, onClick }: { src: string; onClick: () => void }) {
-  return (
-    <div
-      onClick={onClick}
-      className="cursor-pointer overflow-hidden rounded-2xl bg-white dark:bg-[#61646D] shadow hover:scale-[1.02] transition"
-    >
-      <img
-        src={src}
-        alt="art"
-        className="w-full h-64 object-cover"
-      />
-    </div>
   )
 }

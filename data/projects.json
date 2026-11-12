@@ -1,0 +1,350 @@
+{
+  "categories": [
+    "Mobile App",
+    "Website",
+    "AI & ML",
+    "Bioinformatics Tools",
+    "Software"
+  ],
+  "projects": [
+    {
+      "id": "bankflow",
+      "visible": true,
+      "featured": true,
+      "title": "BankFlow",
+      "summary": "Full-stack banking app with a Spring Boot API and a Next.js web client.",
+      "description": "Aplikasi bergaya perbankan dengan backend REST API Spring Boot dan frontend Next.js. Database PostgreSQL (Neon), dijalankan dengan Docker, dengan tooling kualitas dan monitoring seperti SonarCloud, Prometheus, dan Grafana. Dibuat sebagai proyek portofolio software engineering.",
+      "category": "Website",
+      "year": "",
+      "role": "Full-stack Developer",
+      "tags": [
+        "Spring Boot",
+        "Next.js",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/bankflow-web",
+        "demo": "",
+        "extra": [
+          {
+            "label": "API repo",
+            "url": "https://github.com/rachelmathilda/bankflow-api"
+          }
+        ]
+      }
+    },
+    {
+      "id": "patok",
+      "visible": true,
+      "featured": true,
+      "title": "Patok",
+      "summary": "Mobile marketplace for buying and selling houses and land.",
+      "description": "Marketplace mobile untuk jual beli rumah dan tanah. Aplikasi Android native dengan Kotlin, backend Go dengan router Chi, dan database PostgreSQL. Dipisah menjadi dua repo: aplikasi Android dan API.",
+      "category": "Mobile App",
+      "year": "",
+      "role": "Full-stack Developer",
+      "tags": [
+        "Kotlin",
+        "Go",
+        "Chi",
+        "PostgreSQL"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/patok-android",
+        "demo": "",
+        "extra": [
+          {
+            "label": "API repo",
+            "url": "https://github.com/rachelmathilda/patok-api"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vaelys",
+      "visible": true,
+      "featured": true,
+      "title": "Vaelys",
+      "summary": "Fashion shopping app with outfit recommendations, virtual try-on, and real-time chat.",
+      "description": "Aplikasi belanja fashion berbasis Flutter dengan rekomendasi outfit, virtual try-on, dukungan banyak metode pembayaran, dan chat real-time, dengan desain bernuansa ungu yang bersih. Mencakup katalog dan filter, detail produk, keranjang, pesanan, pengiriman dengan peta, diskon, riwayat transaksi, serta pengaturan profil dan bahasa.",
+      "category": "Mobile App",
+      "year": "",
+      "role": "Flutter Developer",
+      "tags": [
+        "Flutter",
+        "Virtual Try-On",
+        "UI/UX"
+      ],
+      "image": "/projects/vaelys.png",
+      "links": {
+        "github": "https://github.com/rachelmathilda/fashion_shop_flutter_mobile_app",
+        "demo": ""
+      }
+    },
+    {
+      "id": "grind",
+      "visible": true,
+      "featured": true,
+      "title": "grind",
+      "summary": "Coffee shop app with a custom coffee builder, Firebase, and Riverpod.",
+      "description": "Aplikasi coffee shop Flutter dengan Firebase Auth, Firestore, state management Riverpod, navigasi GoRouter, dan wizard pembuat kopi custom (tipe, ukuran cup, gula, jenis kopi, rasa, topping). Dilengkapi katalog, keranjang, pengiriman dengan peta, pembayaran, OTP, dan pengaturan profil serta bahasa.",
+      "category": "Mobile App",
+      "year": "",
+      "role": "Flutter Developer",
+      "tags": [
+        "Flutter",
+        "Firebase",
+        "Riverpod",
+        "GoRouter"
+      ],
+      "image": "/projects/grind.png",
+      "links": {
+        "github": "https://github.com/rachelmathilda/coffee_shop_flutter_mobile_app",
+        "demo": ""
+      }
+    },
+    {
+      "id": "neuro-friend",
+      "visible": true,
+      "featured": false,
+      "title": "Neuro Friend",
+      "summary": "Voice-first AI companion for people with ADHD and Autism.",
+      "description": "Teman AI berbasis suara untuk penyandang ADHD dan Autisme, ditenagai Gemma 4 lewat Google AI API. Pengguna cukup menceritakan harinya dan mendapat jadwal terstruktur, tanpa perlu mengetik dan tanpa penghakiman.",
+      "category": "Mobile App",
+      "year": "",
+      "role": "Developer",
+      "tags": [
+        "Flutter",
+        "Gemma 4",
+        "Google AI API",
+        "Voice"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/neuro_friend",
+        "demo": ""
+      }
+    },
+    {
+      "id": "mastering-data-science",
+      "visible": true,
+      "featured": false,
+      "title": "Mastering Data Science",
+      "summary": "Free data science course app with a built-in compiler and notebook.",
+      "description": "Aplikasi kursus data science gratis dengan banyak materi lengkap, compiler dan notebook bawaan, serta sertifikat otomatis. Dibangun dengan Flutter dan membaca konten langsung dari repo GitHub, sehingga materi tidak ikut di dalam APK. Repo ini berisi konten kursusnya.",
+      "category": "Mobile App",
+      "year": "",
+      "role": "Developer",
+      "tags": [
+        "Flutter",
+        "Python",
+        "Course Content"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/mastering-data-science-content",
+        "demo": ""
+      }
+    },
+    {
+      "id": "morphara",
+      "visible": true,
+      "featured": false,
+      "title": "Morphara",
+      "summary": "Furniture e-commerce web app with an interactive 3D customizer.",
+      "description": "Aplikasi e-commerce furnitur modern dengan Next.js. Punya customizer furnitur 3D interaktif, katalog dengan filter, dan alur belanja lengkap dari keranjang sampai checkout.",
+      "category": "Website",
+      "year": "",
+      "role": "Developer",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "3D"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/furniture_shop_next_js_website",
+        "demo": ""
+      }
+    },
+    {
+      "id": "climate-disaster-forecasting",
+      "visible": true,
+      "featured": false,
+      "title": "Climate and Disaster Forecasting",
+      "summary": "Real-time weather monitoring and disaster prediction website.",
+      "description": "Website pemantauan cuaca real-time dan prediksi bencana (banjir, badai, gelombang panas, dan lainnya), plus pembelajaran iklim interaktif. Memakai data Open-Meteo dan peta MapTiler.",
+      "category": "Website",
+      "year": "",
+      "role": "Developer",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Open-Meteo",
+        "MapTiler"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/climate_and_disaster_forecasting_website",
+        "demo": ""
+      }
+    },
+    {
+      "id": "ecommerce-fraud-detection",
+      "visible": true,
+      "featured": false,
+      "title": "E-commerce Fraud Detection",
+      "summary": "Anomaly-based fraud detection for e-commerce listings.",
+      "description": "Deteksi penipuan berbasis anomali untuk listing e-commerce menggunakan Isolation Forest, dengan backend FastAPI dan dashboard Next.js.",
+      "category": "AI & ML",
+      "year": "",
+      "role": "AI Engineer",
+      "tags": [
+        "Isolation Forest",
+        "FastAPI",
+        "Next.js"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/e-commerce-fraud-detection",
+        "demo": ""
+      }
+    },
+    {
+      "id": "waste-type-classification",
+      "visible": true,
+      "featured": false,
+      "title": "Waste Type Classification",
+      "summary": "Real-time waste classification with a two-stage YOLO model.",
+      "description": "Klasifikasi jenis sampah secara real-time dengan dua tahap YOLO. Tahap pertama mendeteksi sampah daur ulang atau organik, tahap kedua mengidentifikasi materialnya. Frontend Next.js dan backend FastAPI.",
+      "category": "AI & ML",
+      "year": "",
+      "role": "AI Engineer",
+      "tags": [
+        "YOLO",
+        "Computer Vision",
+        "FastAPI",
+        "Next.js"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/waste-type-classification",
+        "demo": ""
+      }
+    },
+    {
+      "id": "self-driving-car-simulation",
+      "visible": true,
+      "featured": false,
+      "title": "Self Driving Car Simulation",
+      "summary": "AI simulation for autonomous driving experiments and prediction visualization.",
+      "description": "Proyek simulasi AI untuk eksperimen mengemudi otonom dan visualisasi prediksi. Backend FastAPI dengan NumPy, OpenCV, dan Gymnasium, frontend Next.js.",
+      "category": "AI & ML",
+      "year": "",
+      "role": "AI Engineer",
+      "tags": [
+        "FastAPI",
+        "Next.js",
+        "OpenCV",
+        "Gymnasium"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/self-driving-car-simulation",
+        "demo": "https://self-driving-car-simulation-mocha.vercel.app"
+      }
+    },
+    {
+      "id": "protein-folding-rl",
+      "visible": true,
+      "featured": false,
+      "title": "Protein Folding RL",
+      "summary": "Reinforcement learning for protein folding simulation and analysis.",
+      "description": "Proyek reinforcement learning untuk simulasi dan analisis pelipatan protein. Menggunakan PyTorch dan Gymnasium dengan backend FastAPI dan frontend Next.js.",
+      "category": "Bioinformatics Tools",
+      "year": "",
+      "role": "AI Engineer",
+      "tags": [
+        "PyTorch",
+        "Gymnasium",
+        "FastAPI",
+        "Next.js"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/simple-rl-for-protein-folding",
+        "demo": "https://simple-rl-for-protein-folding.vercel.app"
+      }
+    },
+    {
+      "id": "build-checker",
+      "visible": true,
+      "featured": false,
+      "title": "Build Checker",
+      "summary": "VS Code extension to run and diagnose builds in one click.",
+      "description": "Ekstensi VS Code untuk mengecek build proyek Flutter, Android (Gradle), dan web (npm atau yarn). Mendeteksi tipe proyek otomatis, menjalankan build dari status bar, menampilkan error dan warning di panel Problems, serta menyimpan riwayat build di sidebar.",
+      "category": "Software",
+      "year": "",
+      "role": "Developer",
+      "tags": [
+        "TypeScript",
+        "VS Code Extension"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/extension-build-checker",
+        "demo": ""
+      }
+    },
+    {
+      "id": "learn-to-be-ai-engineer",
+      "visible": true,
+      "featured": false,
+      "title": "Learn to Be AI Engineer",
+      "summary": "Notebooks documenting my AI engineering learning journey.",
+      "description": "Dokumentasi perjalanan belajar AI engineering dalam bentuk notebook: sistem RAG, fine-tuning, agentic systems, dan topik lainnya.",
+      "category": "AI & ML",
+      "year": "",
+      "role": "Learner",
+      "tags": [
+        "RAG",
+        "Fine-tuning",
+        "Agentic Systems",
+        "Jupyter"
+      ],
+      "image": "",
+      "links": {
+        "github": "https://github.com/rachelmathilda/learn-to-be-ai-engineer",
+        "demo": ""
+      }
+    },
+    {
+      "id": "template-salin-saya",
+      "visible": false,
+      "featured": false,
+      "title": "Judul Project",
+      "summary": "Deskripsi singkat di kartu.",
+      "description": "Penjelasan panjang yang muncul di popup detail.",
+      "category": "Website",
+      "year": "2026",
+      "role": "Developer",
+      "tags": [
+        "Next.js"
+      ],
+      "image": "",
+      "links": {
+        "github": "",
+        "demo": "",
+        "extra": [
+          {
+            "label": "API repo",
+            "url": ""
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,37 +1,337 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f3f5fa;
+  --foreground: #111218;
+  --card: #ffffff;
+  --card-fg: #111218;
+  --line: #bcc2d3;
+  --muted: #5b6070;
+  --strip: #f1f4f8;
+  --accent: #6c7bd9;
+  --accent-soft: rgba(108, 123, 217, 0.14);
+  --accent-fg: #ffffff;
+  --card-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  --card-shadow-hover: 0 16px 30px rgba(0, 0, 0, 0.2);
+  --spot: rgba(108, 123, 217, 0.16);
+  --dot: rgba(17, 18, 24, 0.1);
+  --blob-a: rgba(108, 123, 217, 0.35);
+  --blob-b: rgba(255, 183, 160, 0.35);
+  --nav-bg: rgba(255, 255, 255, 0.7);
+  --chip: rgba(17, 18, 24, 0.07);
+  --chip-line: rgba(17, 18, 24, 0.22);
+  --solid: #111218;
+  --solid-fg: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html.dark {
+  --background: #1c1c1c;
+  --foreground: #ededed;
+  --card: #61646d;
+  --card-fg: #ffffff;
+  --line: #717a91;
+  --muted: #c3c8d6;
+  --strip: #9ea7c2;
+  --accent: #9ea7c2;
+  --accent-soft: rgba(158, 167, 194, 0.2);
+  --accent-fg: #14151a;
+  --card-shadow: 0 6px 0 rgba(255, 255, 255, 0.6);
+  --card-shadow-hover: 0 11px 0 rgba(255, 255, 255, 0.8);
+  --spot: rgba(255, 255, 255, 0.16);
+  --dot: rgba(255, 255, 255, 0.08);
+  --blob-a: rgba(158, 167, 194, 0.28);
+  --blob-b: rgba(190, 140, 170, 0.2);
+  --nav-bg: rgba(12, 12, 12, 0.65);
+  --chip: rgba(255, 255, 255, 0.15);
+  --chip-line: rgba(255, 255, 255, 0.3);
+  --solid: #ffffff;
+  --solid-fg: #14151a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-fg: var(--card-fg);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-strip: var(--strip);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fg: var(--accent-fg);
+  --font-sans: var(--ff-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--ff-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--ff-body), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%);
+  pointer-events: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora span {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  will-change: transform;
+}
+
+.aurora span:nth-child(1) {
+  width: 46vw;
+  height: 46vw;
+  top: -14vw;
+  left: -10vw;
+  background: var(--blob-a);
+  animation: drift 22s ease-in-out infinite alternate;
+}
+
+.aurora span:nth-child(2) {
+  width: 40vw;
+  height: 40vw;
+  bottom: -16vw;
+  right: -8vw;
+  background: var(--blob-b);
+  animation: drift 28s ease-in-out infinite alternate-reverse;
+}
+
+.cursor-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--gx, 50%) var(--gy, 30%),
+    var(--spot),
+    transparent 70%
+  );
+  opacity: 0.7;
+}
+
+.card-neo {
+  background: var(--card);
+  color: var(--card-fg);
+  box-shadow: var(--card-shadow);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-neo:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.spot {
+  position: relative;
+  overflow: hidden;
+}
+
+.spot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    280px circle at var(--mx, 50%) var(--my, 50%),
+    var(--spot),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.spot:hover::after {
+  opacity: 1;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0.75rem;
+  animation: marquee 38s linear infinite;
+}
+
+.marquee-mask:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--foreground) 20%,
+    var(--accent) 45%,
+    var(--foreground) 70%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 7s linear infinite;
+}
+
+.caret::after {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 0.9em;
+  margin-left: 4px;
+  vertical-align: -0.05em;
+  background: var(--accent);
+  animation: blink 1s steps(1) infinite;
+}
+
+.float-a {
+  animation: float 7s ease-in-out infinite;
+}
+
+.float-b {
+  animation: float 9s ease-in-out infinite reverse;
+}
+
+.pop-in {
+  animation: pop 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in {
+  animation: fade 0.25s ease-out;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-50% - 0.375rem));
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes drift {
+  to {
+    transform: translate(8vw, 6vw) scale(1.15);
+  }
 }
 
-html.dark body {
-  background-color: #0a0a0a;
-  color: #ededed;
+@keyframes shimmer {
+  to {
+    background-position: -220% 0;
+  }
 }
 
-html.light body {
-  background-color: #ffffff;
-  color: #111111;
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
-body {
-  background-color: #1c1c1c;
+@keyframes float {
+  50% {
+    transform: translateY(-12px) rotate(var(--r, 0deg));
+  }
 }
 
-.light body {
-  background-color: #ffffff;
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.chip {
+  background: var(--chip);
+}
+
+.chip-border {
+  border: 1px solid var(--chip-line);
+}
+
+.btn-solid {
+  background: var(--solid);
+  color: var(--solid-fg);
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+
+.btn-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.marquee-track.reverse {
+  animation-direction: reverse;
+  animation-duration: 46s;
 }

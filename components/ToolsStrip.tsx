@@ -1,25 +1,39 @@
-"use client"
+import { skillGroups } from "@/data/profile"
 
-import { useTheme } from "next-themes"
-import { useMounted } from "@/hooks/useMounted"
+const all = skillGroups.flatMap((g) => g.items)
+const half = Math.ceil(all.length / 2)
+const rows = [all.slice(0, half), all.slice(half)]
 
-export default function ToolsStrip({ children }: { children: React.ReactNode }) {
-  const { theme } = useTheme()
-  const mounted = useMounted()
-  if (!mounted) return null
-
-  const isDark = theme === "dark"
+function Row({ items, reverse }: { items: typeof all; reverse?: boolean }) {
+  const loop = [...items, ...items]
 
   return (
-    <div
-      className="w-full py-3 mt-10"
-      style={{
-        backgroundColor: isDark ? "#9EA7C2" : "#F1F4F8",
-      }}
-    >
-      <div className="flex justify-center gap-3 flex-wrap">
-        {children}
+    <div className="marquee-mask overflow-hidden">
+      <div className={`marquee-track ${reverse ? "reverse" : ""}`}>
+        {loop.map((skill, i) => (
+          <div
+            key={`${skill.name}-${i}`}
+            className="flex shrink-0 items-center gap-2.5 rounded-xl bg-white px-4 py-2.5 shadow transition hover:-translate-y-1"
+            aria-hidden={i >= items.length}
+          >
+            <img
+              src={`/tools/${skill.icon}.svg`}
+              alt=""
+              className="h-7 w-7 object-contain"
+            />
+            <span className="text-sm font-semibold">{skill.name}</span>
+          </div>
+        ))}
       </div>
+    </div>
+  )
+}
+
+export default function ToolsStrip() {
+  return (
+    <div className="w-full space-y-3 bg-strip py-5 text-[#14151a]">
+      <Row items={rows[0]} />
+      <Row items={rows[1]} reverse />
     </div>
   )
 }

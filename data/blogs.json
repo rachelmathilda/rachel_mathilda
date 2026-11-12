@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": "template-salin-saya",
+      "visible": false,
+      "title": "Judul Tulisan",
+      "summary": "Ringkasan singkat tulisan yang muncul di kartu.",
+      "date": "2026-11-12",
+      "readTime": "5 min read",
+      "tags": ["AI", "Flutter"],
+      "url": ""
+    }
+  ]
+}
